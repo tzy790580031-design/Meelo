@@ -1,1 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Meelo 隐私政策 / Meelo Privacy Policy">
+  <title>隐私政策 / Privacy Policy — Meelo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #fafaf8;
+      --foreground: #222;
+      --secondary: #646464;
+      --border: #deded8;
+      --link: #315cc5;
+    }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #171717;
+        --foreground: #eee;
+        --secondary: #aaa;
+        --border: #393939;
+        --link: #9bb8ff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.85;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h1 { font-size: 2rem; line-height: 1.3; }
+    h2 { margin-top: 2.2rem; font-size: 1.25rem; }
+    p, ul { margin: 1rem 0; }
+    li + li { margin-top: .5rem; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+    .meta, footer { color: var(--secondary); font-size: .95rem; }
+    nav { margin-bottom: 2rem; }
+    hr { margin: 4rem 0; border: 0; border-top: 1px solid var(--border); }
+    footer { margin-top: 3rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="语言 / Language">
+    <a href="#zh" lang="zh-CN">中文</a>
+    ·
+    <a href="#en" lang="en">English</a>
+  </nav>
+
+  <article id="zh" lang="zh-CN" aria-labelledby="title-zh">
+    <h1 id="title-zh">Meelo 隐私政策</h1>
+    <p class="meta">最后更新日期：2026 年 10 月 29 日</p>
+
+    <p>
+      本隐私政策说明 Meelo 在提供音乐播放、歌词显示、智能续播、
+      本地音乐管理及分享等功能时，如何处理相关信息。
+      不同功能处理的信息有所不同，具体取决于您使用的功能、
+      连接的音乐服务及授予的系统权限。
+    </p>
+
+    <h2>1. Apple Music 与音乐资料库</h2>
+    <p>
+      在您授权后，Meelo 使用 Apple 提供的 MusicKit 及相关音乐接口，
+      搜索和获取音乐内容、访问获授权的音乐资料库、播放歌曲，
+      并执行您使用相关功能时需要的收藏或歌单操作。
+      相关请求可能涉及搜索词、歌曲、歌手、专辑或歌单标识，
+      以及音乐服务地区和语言信息。
+      服务鉴权及相关处理由 Apple 的框架和服务完成。
+    </p>
+    <p>
+      Meelo 会在设备上保存部分歌曲与资料库信息、播放队列、
+      最近播放记录和播放进度，用于显示内容和恢复播放。
+      应用内断开 Apple Music 连接不等于删除全部本地记录，
+      也不等于撤销系统授权。您可在系统设置中的相关权限页面管理授权。
+    </p>
+
+    <h2>2. 歌词服务</h2>
+    <p>
+      为查找和显示歌词，Meelo 会通过 HTTPS 向 LRCLIB
+      （lrclib.net）及网易云音乐
+      （music.163.com、interface3.music.163.com）发送歌曲名和歌手名。
+      查询网易云歌词时，还会发送搜索结果中匹配歌曲的标识。
+      专辑名和时长可用于设备上的匹配判断。
+      这些歌词请求不上传音频文件。
+    </p>
+    <p>
+      自动选择来源时，设备地区为中国大陆的情况下优先尝试网易云，
+      其他地区优先尝试 LRCLIB。选择某一歌词来源后，
+      应用仍可能尝试另一来源作为备选；
+      播放器准备可选歌词来源时，也可能查询两个服务。
+      歌词查询可在播放、显示队列或准备分享内容时自动发生。
+    </p>
+    <p>
+      Meelo 会在设备上缓存歌词、相关歌曲信息、来源偏好和查询状态，
+      以减少重复请求。隐藏歌词只改变显示状态，不会删除已缓存歌词，
+      也不是关闭全部歌词网络请求的开关。
+    </p>
+    <p>
+      服务提供方会接收处理网络请求所需的信息，例如来源 IP 地址、
+      请求参数及请求头。这些请求使用系统网络组件，
+      并非专门配置为无 Cookie 的匿名会话。
+      第三方对请求信息的处理适用其自身的政策和规则。
+    </p>
+
+    <h2>3. 智能续播</h2>
+    <p>
+      在 Apple Music 音源的顺序播放模式下，
+      Meelo 可使用队列中的歌曲作为依据，通过 MusicKit
+      获取相关歌手、相似歌手的热门歌曲和同流派榜单，
+      并在设备上去重和整理后加入播放队列。
+      必要时，应用会尝试使用 Apple Music 提供的歌曲电台继续播放。
+    </p>
+    <p>
+      这些功能会向 Apple 的服务请求相应的歌曲、歌手、流派或电台资源，
+      并涉及相关资源标识和分页参数。
+      本地导入歌曲不使用这一 Apple Music 智能续播流程。
+    </p>
+
+    <h2>4. 可选的网易云每日推荐</h2>
+    <p>
+      如果您连接网易云每日推荐功能，Meelo 会通过扫码登录取得登录状态，
+      并处理网易云账号标识、昵称及登录 Cookie。
+      这些信息保存在设备的 Keychain 中；
+      相关请求会将登录 Cookie 和必要的请求校验信息发送给网易云，
+      以获取账号资料和每日推荐歌曲。
+    </p>
+    <p>
+      Meelo 会将推荐歌曲信息用于 Apple Music 搜索和匹配，
+      并在获得 Apple Music 授权的情况下，
+      创建或更新您的 Apple Music“网易云每日推荐”歌单。
+      在系统允许后台刷新时，相关同步也可能在后台执行。
+    </p>
+    <p>
+      本地推荐归档按最近七个推荐日维护，
+      在应用执行相关初始化或同步流程时裁剪较早记录。
+      这不表示全部相关缓存、匹配结果和歌单同步记录都会在七天后删除。
+    </p>
+    <p>
+      在 Meelo 内退出网易云登录时，应用会删除所保存的登录凭据，
+      尝试清除本地推荐归档和匹配缓存，并停止相关后台同步任务。
+      已创建的 Apple Music 歌单不会因此删除；
+      为识别和继续管理该歌单，本地同步记录也会保留，
+      其中可能包含来源账号标识、歌单标识和已同步歌曲信息。
+      退出连接不等于注销您的网易云账号。
+    </p>
+
+    <h2>5. 本地音乐、封面与试听</h2>
+    <p>
+      您导入的音频会复制或转换后保存在 Meelo 的本地存储空间中。
+      应用会读取歌曲名、歌手、专辑、内嵌封面及音频规格等信息，
+      用于管理和播放。歌词、封面匹配和试听查询不会上传导入的音频文件。
+    </p>
+    <p>
+      本地音频保存在设备上，不代表其歌曲信息完全不参与网络查询。
+      为补充封面和歌手图片，Meelo 可自动向 MusicBrainz、
+      TheAudioDB、Cover Art Archive、Wikidata 和 Wikimedia Commons
+      查询歌手名、专辑名或相关资源标识，并下载匹配的图片。
+    </p>
+    <p>
+      为获取动态专辑封面，Meelo 会向 artwork.m8tec.top
+      发送 Apple Music 专辑页面地址，或歌手名和专辑名。
+      该域名是第三方封面接口，不应视为 Apple 官方服务。
+      应用还会访问返回的媒体资源地址，以显示或缓存封面。
+    </p>
+    <p>
+      在使用需要试听片段的功能时，Meelo 可向 Deezer
+      （api.deezer.com）发送歌手名和歌曲名，
+      并下载和缓存匹配的试听音频。
+      这些第三方及媒体托管方会接收提供网络服务所需的请求信息。
+    </p>
+
+    <h2>6. 设备上的数据存储</h2>
+    <p>Meelo 使用以下本地存储方式：</p>
+    <ul>
+      <li>
+        系统偏好存储：保存主题、显示选项、音乐来源、播放模式、
+        连接状态及部分搜索和播放记录。
+      </li>
+      <li>
+        应用支持目录及缓存目录：保存歌词、音乐元数据、
+        播放队列、图片、动态封面、试听片段和服务同步记录。
+        较大的数据可能从偏好存储转存为文件。
+      </li>
+      <li>
+        应用文档目录：保存导入的音频、内嵌封面、
+        本地资料库索引、歌单和收藏信息。
+      </li>
+      <li>
+        Keychain：保存网易云登录凭据。
+        当前实现使用仅限本设备的 Keychain 可访问性设置，
+        未启用这些凭据的 Keychain 同步。
+      </li>
+      <li>
+        临时目录：保存分享导出和音频处理过程中的中间文件。
+      </li>
+    </ul>
+    <p>
+      当前版本未实现通过 CloudKit 或 iCloud 容器进行的应用自有数据同步。
+      设备备份、从文件提供方导入内容，以及 Apple Music、
+      照片或其他系统服务的云端功能，是不同的处理流程，
+      可能受您的系统设置及相应服务规则影响。
+      因此，“保存在设备上”不表示相关数据绝不会包含在系统备份中。
+    </p>
+
+    <h2>7. 数据保留和删除</h2>
+    <p>
+      不同数据采用不同的保留方式。
+      设置、导入文件和部分成功查询缓存没有统一的自动删除期限。
+      部分缓存设有刷新或复用期限，但缓存到期不等于立即从磁盘删除。
+      系统也可能根据存储管理需要清理缓存或临时文件。
+    </p>
+    <ul>
+      <li>您可在搜索界面逐项删除显示的搜索历史记录。</li>
+      <li>
+        从首页歌曲列表移除记录，不会同时清除该歌曲的全部歌词、
+        封面缓存或播放记录。
+      </li>
+      <li>从本地歌单移除歌曲，只改变歌单内容，不会删除已导入的音频文件。</li>
+      <li>隐藏歌词不会清除歌词缓存。</li>
+      <li>
+        退出网易云连接的清理范围及保留项目，见本政策第 4 节。
+        断开 Apple Music 也不属于全量数据删除操作。
+      </li>
+      <li>
+        分享或处理流程结束、取消或失败时，应用会在相应路径尝试清理临时文件；
+        异常退出等情况可能使部分文件暂时保留。
+      </li>
+    </ul>
+    <p>
+      当前版本未提供覆盖所有存储位置的一键清除功能。
+      您可以通过系统的应用存储管理功能管理 Meelo，
+      但不应将删除应用理解为同时删除 Keychain 凭据、
+      系统备份、第三方账号信息、Apple Music 歌单，
+      或已经保存和分享至其他位置的副本。
+      外部服务中的内容需要在相应服务中另行管理。
+    </p>
+
+    <h2>8. 分享与照片权限</h2>
+    <p>
+      当您生成或分享歌词图片、视频等内容时，
+      Meelo 会在设备上处理所选内容。
+      若您选择保存到照片，应用会在需要时请求相应系统权限；
+      若您选择通过其他应用分享，所选内容会交给您选择的应用或服务。
+    </p>
+    <p>
+      清理 Meelo 中的临时文件不会删除已经保存至照片、
+      文件或接收方服务中的副本。
+      分享后的内容受相应接收方的处理规则约束。
+    </p>
+
+    <h2>9. 分析与诊断</h2>
+    <p>
+      在分析与崩溃诊断方面，Meelo 仅使用 Apple 提供的相关能力，
+      不接入第三方分析或崩溃统计 SDK。
+      Apple 是否提供相关分析或诊断信息，取决于系统设置及 Apple 的规则。
+      这与前述用于歌词、封面、音乐和试听的第三方功能请求不同。
+    </p>
+    <p>
+      Meelo 还提供本地音乐服务与封面诊断信息，
+      可包含应用版本、系统版本、授权和订阅状态、
+      签名元数据、操作时间及错误代码。
+      您可以主动复制这些信息用于排查问题。
+      复制操作本身不会将诊断报告发送给开发者。
+    </p>
+
+    <h2>10. 第三方处理与政策更新</h2>
+    <p>
+      Apple 及本政策列明的第三方服务会按照各自的政策处理收到的信息。
+      Meelo 的本地删除操作不能删除这些服务已经持有的数据，
+      本政策也不替这些服务承诺统一的服务器日志保留期限。
+    </p>
+    <p>
+      我们可能根据功能或数据处理方式的变化更新本政策，
+      并在本页面调整最后更新日期。
+      涉及需要另行告知或授权的变化时，我们会按适用要求处理。
+    </p>
+
+    <h2>11. 联系我们</h2>
+    <p>
+      如您对本政策或 Meelo 的数据处理有疑问，
+      或希望提出隐私相关请求，请联系：
+      <a href="mailto:tzy790580031@gmail.com">tzy790580031@gmail.com</a>。
+      您发送邮件时，我们会收到您提供的邮箱地址和邮件内容，
+      并用于处理和回复您的请求。
+      请勿发送账号密码、登录 Cookie 或访问令牌。
+    </p>
+  </article>
+
+  <hr>
+
+  <article id="en" lang="en" aria-labelledby="title-en">
+    <h1 id="title-en">Meelo Privacy Policy</h1>
+    <p class="meta">Last updated: October 29, 2026</p>
+
+    <p>
+      This Privacy Policy explains how Meelo handles information when
+      providing music playback, lyrics, playback continuation, local music
+      management, and sharing features. The information involved depends
+      on the features you use, the music services you connect, and the
+      system permissions you grant.
+    </p>
+
+    <h2>1. Apple Music and Your Music Library</h2>
+    <p>
+      With your authorization, Meelo uses Apple's MusicKit and related
+      music interfaces to search for and retrieve music, access your
+      authorized music library, play songs, and perform favorite or
+      playlist operations required by the features you use.
+      Requests may involve search terms, song, artist, album, or playlist
+      identifiers, and music service region and language information.
+      Authentication and related processing are handled through Apple's
+      frameworks and services.
+    </p>
+    <p>
+      Meelo stores some song and library information, playback queues,
+      recent playback records, and playback positions on your device
+      to display content and restore playback.
+      Disconnecting Apple Music within Meelo does not delete all local
+      records or revoke system authorization. You can manage
+      authorization in the relevant permission controls in system settings.
+    </p>
+
+    <h2>2. Lyrics Services</h2>
+    <p>
+      To find and display lyrics, Meelo sends song titles and artist names
+      over HTTPS to LRCLIB (lrclib.net) and NetEase Cloud Music
+      (music.163.com and interface3.music.163.com).
+      NetEase lyrics requests also include the identifier of a matching
+      song returned by its search service. Album names and durations may
+      be used for matching on your device. These lyrics requests do not
+      upload audio files.
+    </p>
+    <p>
+      Automatic source selection prioritizes NetEase when the device
+      region is mainland China and LRCLIB in other regions.
+      Selecting a particular source does not prevent Meelo from trying
+      the other source as a fallback. Preparing the player's available
+      lyrics sources may also involve querying both services.
+      Lyrics requests may occur automatically during playback, while
+      displaying queues, or when preparing content for sharing.
+    </p>
+    <p>
+      Meelo caches lyrics, related song information, source preferences,
+      and lookup status on your device to reduce repeated requests.
+      Hiding lyrics changes their display state; it does not delete
+      cached lyrics and is not a switch that disables all lyrics requests.
+    </p>
+    <p>
+      Service providers receive information needed to handle network
+      requests, such as the source IP address, request parameters, and
+      request headers. These requests use system networking components
+      and are not specifically configured as cookie-free anonymous
+      sessions. Third-party handling is subject to those providers'
+      own policies and rules.
+    </p>
+
+    <h2>3. Playback Continuation</h2>
+    <p>
+      In sequential playback mode with Apple Music as the music source,
+      Meelo may use a song in the queue to request related artists,
+      popular songs by similar artists, and genre charts through MusicKit.
+      Meelo removes duplicates and organizes the results on your device
+      before adding them to the queue. When necessary, it may try an
+      Apple Music song station to continue playback.
+    </p>
+    <p>
+      These features request song, artist, genre, or station resources
+      from Apple and involve relevant resource identifiers and pagination
+      parameters. Locally imported songs do not use this Apple Music
+      continuation process.
+    </p>
+
+    <h2>4. Optional NetEase Daily Recommendations</h2>
+    <p>
+      If you connect NetEase daily recommendations, Meelo obtains a
+      sign-in session through QR-code login and handles your NetEase
+      account identifier, nickname, and login cookies.
+      This information is stored in your device's Keychain.
+      Relevant requests send login cookies and necessary request
+      verification information to NetEase to retrieve account details
+      and daily recommended songs.
+    </p>
+    <p>
+      Meelo uses recommended song information to search for matching
+      songs on Apple Music. With Apple Music authorization, it creates
+      or updates a NetEase daily recommendations playlist in your
+      Apple Music library. Synchronization may also run in the
+      background when permitted by the system.
+    </p>
+    <p>
+      The local recommendations archive is maintained for the most recent
+      seven recommendation days. Older entries are pruned during relevant
+      initialization or synchronization processes. This does not mean
+      that all related caches, matching results, and playlist
+      synchronization records are deleted after seven days.
+    </p>
+    <p>
+      Signing out of NetEase within Meelo deletes the stored login
+      credentials, attempts to remove the local recommendations archive
+      and matching cache, and stops related background synchronization.
+      It does not delete playlists already created in Apple Music.
+      Local synchronization records are retained to identify and manage
+      that playlist and may include the source account identifier,
+      playlist identifiers, and synchronized song information.
+      Disconnecting does not close your NetEase account.
+    </p>
+
+    <h2>5. Local Music, Artwork, and Previews</h2>
+    <p>
+      Imported audio is copied or converted and stored in Meelo's local
+      storage. The app reads information such as song titles, artists,
+      albums, embedded artwork, and audio specifications for management
+      and playback. Lyrics, artwork matching, and preview lookups do not
+      upload your imported audio files.
+    </p>
+    <p>
+      Keeping audio files on your device does not mean their metadata
+      is never used in network requests. To supplement album artwork
+      and artist images, Meelo may automatically query MusicBrainz,
+      TheAudioDB, Cover Art Archive, Wikidata, and Wikimedia Commons
+      using artist names, album names, or related resource identifiers,
+      and download matching images.
+    </p>
+    <p>
+      To retrieve animated album artwork, Meelo sends an Apple Music
+      album page URL, or an artist name and album name, to
+      artwork.m8tec.top. This domain is a third-party artwork interface
+      and should not be treated as an official Apple service.
+      Meelo also accesses returned media URLs to display or cache artwork.
+    </p>
+    <p>
+      When you use a feature that requires a preview clip, Meelo may send
+      an artist name and song title to Deezer (api.deezer.com) and download
+      and cache a matching audio preview. These providers and media hosts
+      receive the request information needed to deliver their services.
+    </p>
+
+    <h2>6. Storage on Your Device</h2>
+    <p>Meelo uses the following local storage locations:</p>
+    <ul>
+      <li>
+        System preferences: themes, display options, music source,
+        playback mode, connection state, and some search and playback records.
+      </li>
+      <li>
+        Application Support and cache directories: lyrics, music
+        metadata, playback queues, images, animated artwork, preview
+        clips, and service synchronization records.
+        Larger data may be moved from preferences into files.
+      </li>
+      <li>
+        The app's Documents directory: imported audio, embedded artwork,
+        the local library index, playlists, and favorites.
+      </li>
+      <li>
+        Keychain: NetEase login credentials. The current implementation
+        uses a device-only Keychain accessibility setting and does not
+        enable Keychain synchronization for these credentials.
+      </li>
+      <li>
+        Temporary storage: intermediate files used for sharing,
+        exporting, and audio processing.
+      </li>
+    </ul>
+    <p>
+      The current version does not implement its own app data
+      synchronization through CloudKit or iCloud containers.
+      Device backups, importing files from file providers, and cloud
+      features offered by Apple Music, Photos, or other system services
+      are separate processes governed by your settings and the relevant
+      service rules. Local storage therefore does not mean that data
+      can never be included in a system backup.
+    </p>
+
+    <h2>7. Retention and Deletion</h2>
+    <p>
+      Different data has different retention behavior.
+      Settings, imported files, and some successful lookup caches do not
+      have a single automatic deletion period.
+      Some caches have refresh or reuse periods, but expiration does not
+      mean immediate deletion from disk. The system may also remove
+      caches or temporary files as part of storage management.
+    </p>
+    <ul>
+      <li>You can individually delete displayed search history entries in the search interface.</li>
+      <li>
+        Removing a song entry from the home list does not also remove
+        all associated lyrics, artwork caches, or playback records.
+      </li>
+      <li>
+        Removing a song from a local playlist changes that playlist
+        without deleting the imported audio file.
+      </li>
+      <li>Hiding lyrics does not clear the lyrics cache.</li>
+      <li>
+        Section 4 describes what is removed and retained when you
+        disconnect NetEase. Disconnecting Apple Music is also not a
+        full data deletion operation.
+      </li>
+      <li>
+        The app attempts to clean up temporary files in relevant
+        completion, cancellation, and failure paths. Unexpected
+        termination may leave some files temporarily retained.
+      </li>
+    </ul>
+    <p>
+      The current version does not offer a single control that clears
+      every storage location. You can manage Meelo through the system's
+      app storage controls, but deleting the app should not be understood
+      as also deleting Keychain credentials, system backups, third-party
+      account information, Apple Music playlists, or copies already saved
+      or shared elsewhere. Content held by external services must be
+      managed separately in those services.
+    </p>
+
+    <h2>8. Sharing and Photos Permission</h2>
+    <p>
+      When you generate or share lyrics images, videos, or other content,
+      Meelo processes the selected content on your device.
+      If you choose to save to Photos, the app requests the relevant
+      system permission when needed. If you share through another app,
+      the selected content is passed to the app or service you choose.
+    </p>
+    <p>
+      Removing temporary files from Meelo does not delete copies already
+      saved to Photos, Files, or a recipient's service.
+      Shared content is subject to the recipient's handling rules.
+    </p>
+
+    <h2>9. Analytics and Diagnostics</h2>
+    <p>
+      For analytics and crash diagnostics, Meelo uses only capabilities
+      provided by Apple and does not integrate third-party analytics or
+      crash reporting SDKs. The availability of analytics or diagnostics
+      from Apple depends on system settings and Apple's rules.
+      This is separate from the third-party requests used for lyrics,
+      artwork, music, and previews described above.
+    </p>
+    <p>
+      Meelo also provides local music service and artwork diagnostics,
+      which may include app and system versions, authorization and
+      subscription status, signing metadata, operation times, and error
+      codes. You can choose to copy this information for troubleshooting.
+      Copying a report does not itself send it to the developer.
+    </p>
+
+    <h2>10. Third Parties and Policy Updates</h2>
+    <p>
+      Apple and the third-party services identified in this policy
+      process the information they receive under their own policies.
+      Local deletion actions in Meelo cannot delete information already
+      held by those services. This policy does not promise a uniform
+      server-log retention period on their behalf.
+    </p>
+    <p>
+      We may update this policy as features or data handling practices
+      change and revise the last-updated date on this page.
+      Where a change requires additional notice or authorization,
+      we will handle it in accordance with applicable requirements.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      For questions about this policy or Meelo's data handling,
+      or to make a privacy-related request, contact
+      <a href="mailto:tzy790580031@gmail.com">tzy790580031@gmail.com</a>.
+      When you email us, we receive the email address and message content
+      you provide and use them to handle and respond to your request.
+      Please do not send account passwords, login cookies, or access tokens.
+    </p>
+  </article>
+
+  <footer>
+    <p>© Meelo · <a href="#zh">中文</a> · <a href="#en">English</a></p>
+  </footer>
+</main>
+</body>
+</html>
