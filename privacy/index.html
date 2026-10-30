@@ -1,311 +1,19 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Meelo 隐私政策 / Meelo Privacy Policy">
-  <title>隐私政策 / Privacy Policy — Meelo</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #fafaf8;
-      --foreground: #222;
-      --secondary: #646464;
-      --border: #deded8;
-      --link: #315cc5;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #171717;
-        --foreground: #eee;
-        --secondary: #aaa;
-        --border: #393939;
-        --link: #9bb8ff;
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--foreground);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.85;
-      overflow-wrap: anywhere;
-    }
-
-    main {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    h1 { font-size: 2rem; line-height: 1.3; }
-    h2 { margin-top: 2.2rem; font-size: 1.25rem; }
-    p, ul { margin: 1rem 0; }
-    li + li { margin-top: .5rem; }
-    a { color: var(--link); text-underline-offset: 3px; }
-    a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
-    .meta, footer { color: var(--secondary); font-size: .95rem; }
-    nav { margin-bottom: 2rem; }
-    hr { margin: 4rem 0; border: 0; border-top: 1px solid var(--border); }
-    footer { margin-top: 3rem; }
-  </style>
-</head>
-<body>
-<main>
-  <nav aria-label="语言 / Language">
-    <a href="#zh" lang="zh-CN">中文</a>
-    ·
-    <a href="#en" lang="en">English</a>
-  </nav>
-
-  <article id="zh" lang="zh-CN" aria-labelledby="title-zh">
-    <h1 id="title-zh">Meelo 隐私政策</h1>
-    <p class="meta">最后更新日期：2026 年 10 月 29 日</p>
-
-    <p>
-      本隐私政策说明 Meelo 在提供音乐播放、歌词显示、智能续播、
-      本地音乐管理及分享等功能时，如何处理相关信息。
-      不同功能处理的信息有所不同，具体取决于您使用的功能、
-      连接的音乐服务及授予的系统权限。
-    </p>
-
-    <h2>1. Apple Music 与音乐资料库</h2>
-    <p>
-      在您授权后，Meelo 使用 Apple 提供的 MusicKit 及相关音乐接口，
-      搜索和获取音乐内容、访问获授权的音乐资料库、播放歌曲，
-      并执行您使用相关功能时需要的收藏或歌单操作。
-      相关请求可能涉及搜索词、歌曲、歌手、专辑或歌单标识，
-      以及音乐服务地区和语言信息。
-      服务鉴权及相关处理由 Apple 的框架和服务完成。
-    </p>
-    <p>
-      Meelo 会在设备上保存部分歌曲与资料库信息、播放队列、
-      最近播放记录和播放进度，用于显示内容和恢复播放。
-      应用内断开 Apple Music 连接不等于删除全部本地记录，
-      也不等于撤销系统授权。您可在系统设置中的相关权限页面管理授权。
-    </p>
-
-    <h2>2. 歌词服务</h2>
-    <p>
-      为查找和显示歌词，Meelo 会通过 HTTPS 向 LRCLIB
-      （lrclib.net）及网易云音乐
-      （music.163.com、interface3.music.163.com）发送歌曲名和歌手名。
-      查询网易云歌词时，还会发送搜索结果中匹配歌曲的标识。
-      专辑名和时长可用于设备上的匹配判断。
-      这些歌词请求不上传音频文件。
-    </p>
-    <p>
-      自动选择来源时，设备地区为中国大陆的情况下优先尝试网易云，
-      其他地区优先尝试 LRCLIB。选择某一歌词来源后，
-      应用仍可能尝试另一来源作为备选；
-      播放器准备可选歌词来源时，也可能查询两个服务。
-      歌词查询可在播放、显示队列或准备分享内容时自动发生。
-    </p>
-    <p>
-      Meelo 会在设备上缓存歌词、相关歌曲信息、来源偏好和查询状态，
-      以减少重复请求。隐藏歌词只改变显示状态，不会删除已缓存歌词，
-      也不是关闭全部歌词网络请求的开关。
-    </p>
-    <p>
-      服务提供方会接收处理网络请求所需的信息，例如来源 IP 地址、
-      请求参数及请求头。这些请求使用系统网络组件，
-      并非专门配置为无 Cookie 的匿名会话。
-      第三方对请求信息的处理适用其自身的政策和规则。
-    </p>
-
-    <h2>3. 智能续播</h2>
-    <p>
-      在 Apple Music 音源的顺序播放模式下，
-      Meelo 可使用队列中的歌曲作为依据，通过 MusicKit
-      获取相关歌手、相似歌手的热门歌曲和同流派榜单，
-      并在设备上去重和整理后加入播放队列。
-      必要时，应用会尝试使用 Apple Music 提供的歌曲电台继续播放。
-    </p>
-    <p>
-      这些功能会向 Apple 的服务请求相应的歌曲、歌手、流派或电台资源，
-      并涉及相关资源标识和分页参数。
-      本地导入歌曲不使用这一 Apple Music 智能续播流程。
-    </p>
-
-    <h2>4. 可选的网易云每日推荐</h2>
-    <p>
-      如果您连接网易云每日推荐功能，Meelo 会通过扫码登录取得登录状态，
-      并处理网易云账号标识、昵称及登录 Cookie。
-      这些信息保存在设备的 Keychain 中；
-      相关请求会将登录 Cookie 和必要的请求校验信息发送给网易云，
-      以获取账号资料和每日推荐歌曲。
-    </p>
-    <p>
-      Meelo 会将推荐歌曲信息用于 Apple Music 搜索和匹配，
-      并在获得 Apple Music 授权的情况下，
-      创建或更新您的 Apple Music“网易云每日推荐”歌单。
-      在系统允许后台刷新时，相关同步也可能在后台执行。
-    </p>
-    <p>
-      本地推荐归档按最近七个推荐日维护，
-      在应用执行相关初始化或同步流程时裁剪较早记录。
-      这不表示全部相关缓存、匹配结果和歌单同步记录都会在七天后删除。
-    </p>
-    <p>
-      在 Meelo 内退出网易云登录时，应用会删除所保存的登录凭据，
-      尝试清除本地推荐归档和匹配缓存，并停止相关后台同步任务。
-      已创建的 Apple Music 歌单不会因此删除；
-      为识别和继续管理该歌单，本地同步记录也会保留，
-      其中可能包含来源账号标识、歌单标识和已同步歌曲信息。
-      退出连接不等于注销您的网易云账号。
-    </p>
-
-    <h2>5. 本地音乐、封面与试听</h2>
-    <p>
-      您导入的音频会复制或转换后保存在 Meelo 的本地存储空间中。
-      应用会读取歌曲名、歌手、专辑、内嵌封面及音频规格等信息，
-      用于管理和播放。歌词、封面匹配和试听查询不会上传导入的音频文件。
-    </p>
-    <p>
-      本地音频保存在设备上，不代表其歌曲信息完全不参与网络查询。
-      为补充封面和歌手图片，Meelo 可自动向 MusicBrainz、
-      TheAudioDB、Cover Art Archive、Wikidata 和 Wikimedia Commons
-      查询歌手名、专辑名或相关资源标识，并下载匹配的图片。
-    </p>
-    <p>
-      为获取动态专辑封面，Meelo 会向 artwork.m8tec.top
-      发送 Apple Music 专辑页面地址，或歌手名和专辑名。
-      该域名是第三方封面接口，不应视为 Apple 官方服务。
-      应用还会访问返回的媒体资源地址，以显示或缓存封面。
-    </p>
-    <p>
-      在使用需要试听片段的功能时，Meelo 可向 Deezer
-      （api.deezer.com）发送歌手名和歌曲名，
-      并下载和缓存匹配的试听音频。
-      这些第三方及媒体托管方会接收提供网络服务所需的请求信息。
-    </p>
-
-    <h2>6. 设备上的数据存储</h2>
-    <p>Meelo 使用以下本地存储方式：</p>
-    <ul>
-      <li>
-        系统偏好存储：保存主题、显示选项、音乐来源、播放模式、
-        连接状态及部分搜索和播放记录。
-      </li>
-      <li>
-        应用支持目录及缓存目录：保存歌词、音乐元数据、
-        播放队列、图片、动态封面、试听片段和服务同步记录。
-        较大的数据可能从偏好存储转存为文件。
-      </li>
-      <li>
-        应用文档目录：保存导入的音频、内嵌封面、
-        本地资料库索引、歌单和收藏信息。
-      </li>
-      <li>
-        Keychain：保存网易云登录凭据。
-        当前实现使用仅限本设备的 Keychain 可访问性设置，
-        未启用这些凭据的 Keychain 同步。
-      </li>
-      <li>
-        临时目录：保存分享导出和音频处理过程中的中间文件。
-      </li>
-    </ul>
-    <p>
-      当前版本未实现通过 CloudKit 或 iCloud 容器进行的应用自有数据同步。
-      设备备份、从文件提供方导入内容，以及 Apple Music、
-      照片或其他系统服务的云端功能，是不同的处理流程，
-      可能受您的系统设置及相应服务规则影响。
-      因此，“保存在设备上”不表示相关数据绝不会包含在系统备份中。
-    </p>
-
-    <h2>7. 数据保留和删除</h2>
-    <p>
-      不同数据采用不同的保留方式。
-      设置、导入文件和部分成功查询缓存没有统一的自动删除期限。
-      部分缓存设有刷新或复用期限，但缓存到期不等于立即从磁盘删除。
-      系统也可能根据存储管理需要清理缓存或临时文件。
-    </p>
-    <ul>
-      <li>您可在搜索界面逐项删除显示的搜索历史记录。</li>
-      <li>
-        从首页歌曲列表移除记录，不会同时清除该歌曲的全部歌词、
-        封面缓存或播放记录。
-      </li>
-      <li>从本地歌单移除歌曲，只改变歌单内容，不会删除已导入的音频文件。</li>
-      <li>隐藏歌词不会清除歌词缓存。</li>
-      <li>
-        退出网易云连接的清理范围及保留项目，见本政策第 4 节。
-        断开 Apple Music 也不属于全量数据删除操作。
-      </li>
-      <li>
-        分享或处理流程结束、取消或失败时，应用会在相应路径尝试清理临时文件；
-        异常退出等情况可能使部分文件暂时保留。
-      </li>
-    </ul>
-    <p>
-      当前版本未提供覆盖所有存储位置的一键清除功能。
-      您可以通过系统的应用存储管理功能管理 Meelo，
-      但不应将删除应用理解为同时删除 Keychain 凭据、
-      系统备份、第三方账号信息、Apple Music 歌单，
-      或已经保存和分享至其他位置的副本。
-      外部服务中的内容需要在相应服务中另行管理。
-    </p>
-
-    <h2>8. 分享与照片权限</h2>
-    <p>
-      当您生成或分享歌词图片、视频等内容时，
-      Meelo 会在设备上处理所选内容。
-      若您选择保存到照片，应用会在需要时请求相应系统权限；
-      若您选择通过其他应用分享，所选内容会交给您选择的应用或服务。
-    </p>
-    <p>
-      清理 Meelo 中的临时文件不会删除已经保存至照片、
-      文件或接收方服务中的副本。
-      分享后的内容受相应接收方的处理规则约束。
-    </p>
-
-    <h2>9. 分析与诊断</h2>
-    <p>
-      在分析与崩溃诊断方面，Meelo 仅使用 Apple 提供的相关能力，
-      不接入第三方分析或崩溃统计 SDK。
-      Apple 是否提供相关分析或诊断信息，取决于系统设置及 Apple 的规则。
-      这与前述用于歌词、封面、音乐和试听的第三方功能请求不同。
-    </p>
-    <p>
-      Meelo 还提供本地音乐服务与封面诊断信息，
-      可包含应用版本、系统版本、授权和订阅状态、
-      签名元数据、操作时间及错误代码。
-      您可以主动复制这些信息用于排查问题。
-      复制操作本身不会将诊断报告发送给开发者。
-    </p>
-
-    <h2>10. 第三方处理与政策更新</h2>
-    <p>
-      Apple 及本政策列明的第三方服务会按照各自的政策处理收到的信息。
-      Meelo 的本地删除操作不能删除这些服务已经持有的数据，
-      本政策也不替这些服务承诺统一的服务器日志保留期限。
-    </p>
-    <p>
-      我们可能根据功能或数据处理方式的变化更新本政策，
-      并在本页面调整最后更新日期。
-      涉及需要另行告知或授权的变化时，我们会按适用要求处理。
-    </p>
-
-    <h2>11. 联系我们</h2>
-    <p>
-      如您对本政策或 Meelo 的数据处理有疑问，
-      或希望提出隐私相关请求，请联系：
-      <a href="mailto:tzy790580031@gmail.com">tzy790580031@gmail.com</a>。
-      您发送邮件时，我们会收到您提供的邮箱地址和邮件内容，
-      并用于处理和回复您的请求。
-      请勿发送账号密码、登录 Cookie 或访问令牌。
-    </p>
-  </article>
-
-  <hr>
-
-  <article id="en" lang="en" aria-labelledby="title-en">
+<!doctype html>
+<html lang="en" data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>Meelo — Privacy Policy</title><script>
+const root=document.documentElement;
+const read=(key)=>{try{return localStorage.getItem(key)}catch{return null}};
+const write=(key,value)=>{try{localStorage.setItem(key,value)}catch{}};
+let language=['zh','en'].includes(read('meelo-lang'))?read('meelo-lang'):'auto';
+let theme=['light','dark'].includes(read('meelo-theme'))?read('meelo-theme'):'auto';
+const media=matchMedia('(prefers-color-scheme: dark)');
+function setLanguage(){const lang=language==='auto'?(/^zh(?:-|$)/i.test(navigator.language||'en')?'zh':'en'):language;root.dataset.lang=lang;root.lang=lang==='zh'?'zh-CN':'en';return lang}
+function setTheme(){root.dataset.theme=theme==='auto'?(media.matches?'dark':'light'):theme}
+setLanguage();setTheme();
+</script><style>
+:root{color-scheme:light;--bg:#fafaf9;--panel:#f0f0ed;--text:#242522;--muted:#656760;--line:#ddded8;--link:#356447}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#171917;--panel:#222522;--text:#eceee9;--muted:#afb4aa;--line:#383d36;--link:#a3ccaf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;overflow-wrap:anywhere}a{color:var(--link);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}a:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:4px}.shell{max-width:800px;margin:auto;padding:0 28px}.topbar{padding:28px 0 22px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}nav{display:flex;gap:24px}nav a{font-size:14px;color:var(--muted);text-decoration:none}nav a[aria-current]{color:var(--text);text-decoration:underline;text-underline-offset:8px}.tools{display:flex;gap:10px}select{max-width:155px;min-height:44px;font:inherit;font-size:13px;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px}main{padding:52px 0 64px}h1{font-size:clamp(30px,6vw,42px);font-weight:650;letter-spacing:-.035em;line-height:1.25;margin:0 0 20px}h2{font-size:20px;line-height:1.5;font-weight:650;letter-spacing:-.02em;margin:40px 0 16px;padding-top:28px;border-top:1px solid var(--line)}h3{font-size:16px;line-height:1.6;margin:0;font-weight:600}p,ul{margin:16px 0}p,li{color:var(--muted)}li+li{margin-top:10px}ul{padding-left:24px}.meta{font-size:13px;margin-bottom:30px}.contact{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:30px 0 38px}.contact p{margin:8px 0 0}.faq{padding:24px 0;border-bottom:1px solid var(--line)}.faq p{margin:10px 0 0}.faq-heading{padding:0;border:0;margin:0 0 4px}footer{padding:22px 0 32px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}html[data-lang="en"] [data-content="zh"],html[data-lang="zh"] [data-content="en"]{display:none}.skip{position:absolute;top:-100px;left:20px;background:var(--bg);padding:8px 16px}.skip:focus{top:8px}@media(max-width:520px){.shell{padding:0 22px}.topbar{gap:22px;padding-top:22px}.tools{width:100%}select{flex:1;max-width:none}main{padding-top:36px}h2{font-size:19px}.contact{padding:20px}nav{gap:26px}}@media print{.topbar,.skip{display:none}main{padding:0}body{background:white;color:black}p,li{color:#333}h2{break-after:avoid}.contact,.faq{break-inside:avoid}}
+</style><noscript><style>@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#171917;--panel:#222522;--text:#eceee9;--muted:#afb4aa;--line:#383d36;--link:#a3ccaf}}html [data-content]{display:block!important}.tools{display:none}article+article{margin-top:64px}</style></noscript></head><body data-page="privacy"><a class="skip" href="#main" data-label="skip">Skip to content</a><div class="shell"><header class="topbar"><nav aria-label="Site navigation"><a href="../support/index.html" data-label="support">Support</a><a href="../privacy/index.html" data-label="privacy" aria-current="page">Privacy Policy</a></nav><div class="tools"><select id="language" aria-label="Language"><option value="auto" data-label="auto">Language: System</option><option value="zh">中文</option><option value="en">English</option></select><select id="theme" aria-label="Appearance"><option value="auto" data-label="system">Theme: System</option><option value="light" data-label="light">Light</option><option value="dark" data-label="dark">Dark</option></select></div></header><main id="main" tabindex="-1"><article data-content="en" lang="en" aria-labelledby="title-en">
     <h1 id="title-en">Meelo Privacy Policy</h1>
     <p class="meta">Last updated: October 29, 2026</p>
 
@@ -585,11 +293,249 @@
       you provide and use them to handle and respond to your request.
       Please do not send account passwords, login cookies, or access tokens.
     </p>
-  </article>
+  </article><article data-content="zh" lang="zh-CN" aria-labelledby="title-zh">
+    <h1 id="title-zh">Meelo 隐私政策</h1>
+    <p class="meta">最后更新日期：2026 年 10 月 29 日</p>
 
-  <footer>
-    <p>© Meelo · <a href="#zh">中文</a> · <a href="#en">English</a></p>
-  </footer>
-</main>
-</body>
-</html>
+    <p>
+      本隐私政策说明 Meelo 在提供音乐播放、歌词显示、智能续播、
+      本地音乐管理及分享等功能时，如何处理相关信息。
+      不同功能处理的信息有所不同，具体取决于您使用的功能、
+      连接的音乐服务及授予的系统权限。
+    </p>
+
+    <h2>1. Apple Music 与音乐资料库</h2>
+    <p>
+      在您授权后，Meelo 使用 Apple 提供的 MusicKit 及相关音乐接口，
+      搜索和获取音乐内容、访问获授权的音乐资料库、播放歌曲，
+      并执行您使用相关功能时需要的收藏或歌单操作。
+      相关请求可能涉及搜索词、歌曲、歌手、专辑或歌单标识，
+      以及音乐服务地区和语言信息。
+      服务鉴权及相关处理由 Apple 的框架和服务完成。
+    </p>
+    <p>
+      Meelo 会在设备上保存部分歌曲与资料库信息、播放队列、
+      最近播放记录和播放进度，用于显示内容和恢复播放。
+      应用内断开 Apple Music 连接不等于删除全部本地记录，
+      也不等于撤销系统授权。您可在系统设置中的相关权限页面管理授权。
+    </p>
+
+    <h2>2. 歌词服务</h2>
+    <p>
+      为查找和显示歌词，Meelo 会通过 HTTPS 向 LRCLIB
+      （lrclib.net）及网易云音乐
+      （music.163.com、interface3.music.163.com）发送歌曲名和歌手名。
+      查询网易云歌词时，还会发送搜索结果中匹配歌曲的标识。
+      专辑名和时长可用于设备上的匹配判断。
+      这些歌词请求不上传音频文件。
+    </p>
+    <p>
+      自动选择来源时，设备地区为中国大陆的情况下优先尝试网易云，
+      其他地区优先尝试 LRCLIB。选择某一歌词来源后，
+      应用仍可能尝试另一来源作为备选；
+      播放器准备可选歌词来源时，也可能查询两个服务。
+      歌词查询可在播放、显示队列或准备分享内容时自动发生。
+    </p>
+    <p>
+      Meelo 会在设备上缓存歌词、相关歌曲信息、来源偏好和查询状态，
+      以减少重复请求。隐藏歌词只改变显示状态，不会删除已缓存歌词，
+      也不是关闭全部歌词网络请求的开关。
+    </p>
+    <p>
+      服务提供方会接收处理网络请求所需的信息，例如来源 IP 地址、
+      请求参数及请求头。这些请求使用系统网络组件，
+      并非专门配置为无 Cookie 的匿名会话。
+      第三方对请求信息的处理适用其自身的政策和规则。
+    </p>
+
+    <h2>3. 智能续播</h2>
+    <p>
+      在 Apple Music 音源的顺序播放模式下，
+      Meelo 可使用队列中的歌曲作为依据，通过 MusicKit
+      获取相关歌手、相似歌手的热门歌曲和同流派榜单，
+      并在设备上去重和整理后加入播放队列。
+      必要时，应用会尝试使用 Apple Music 提供的歌曲电台继续播放。
+    </p>
+    <p>
+      这些功能会向 Apple 的服务请求相应的歌曲、歌手、流派或电台资源，
+      并涉及相关资源标识和分页参数。
+      本地导入歌曲不使用这一 Apple Music 智能续播流程。
+    </p>
+
+    <h2>4. 可选的网易云每日推荐</h2>
+    <p>
+      如果您连接网易云每日推荐功能，Meelo 会通过扫码登录取得登录状态，
+      并处理网易云账号标识、昵称及登录 Cookie。
+      这些信息保存在设备的 Keychain 中；
+      相关请求会将登录 Cookie 和必要的请求校验信息发送给网易云，
+      以获取账号资料和每日推荐歌曲。
+    </p>
+    <p>
+      Meelo 会将推荐歌曲信息用于 Apple Music 搜索和匹配，
+      并在获得 Apple Music 授权的情况下，
+      创建或更新您的 Apple Music“网易云每日推荐”歌单。
+      在系统允许后台刷新时，相关同步也可能在后台执行。
+    </p>
+    <p>
+      本地推荐归档按最近七个推荐日维护，
+      在应用执行相关初始化或同步流程时裁剪较早记录。
+      这不表示全部相关缓存、匹配结果和歌单同步记录都会在七天后删除。
+    </p>
+    <p>
+      在 Meelo 内退出网易云登录时，应用会删除所保存的登录凭据，
+      尝试清除本地推荐归档和匹配缓存，并停止相关后台同步任务。
+      已创建的 Apple Music 歌单不会因此删除；
+      为识别和继续管理该歌单，本地同步记录也会保留，
+      其中可能包含来源账号标识、歌单标识和已同步歌曲信息。
+      退出连接不等于注销您的网易云账号。
+    </p>
+
+    <h2>5. 本地音乐、封面与试听</h2>
+    <p>
+      您导入的音频会复制或转换后保存在 Meelo 的本地存储空间中。
+      应用会读取歌曲名、歌手、专辑、内嵌封面及音频规格等信息，
+      用于管理和播放。歌词、封面匹配和试听查询不会上传导入的音频文件。
+    </p>
+    <p>
+      本地音频保存在设备上，不代表其歌曲信息完全不参与网络查询。
+      为补充封面和歌手图片，Meelo 可自动向 MusicBrainz、
+      TheAudioDB、Cover Art Archive、Wikidata 和 Wikimedia Commons
+      查询歌手名、专辑名或相关资源标识，并下载匹配的图片。
+    </p>
+    <p>
+      为获取动态专辑封面，Meelo 会向 artwork.m8tec.top
+      发送 Apple Music 专辑页面地址，或歌手名和专辑名。
+      该域名是第三方封面接口，不应视为 Apple 官方服务。
+      应用还会访问返回的媒体资源地址，以显示或缓存封面。
+    </p>
+    <p>
+      在使用需要试听片段的功能时，Meelo 可向 Deezer
+      （api.deezer.com）发送歌手名和歌曲名，
+      并下载和缓存匹配的试听音频。
+      这些第三方及媒体托管方会接收提供网络服务所需的请求信息。
+    </p>
+
+    <h2>6. 设备上的数据存储</h2>
+    <p>Meelo 使用以下本地存储方式：</p>
+    <ul>
+      <li>
+        系统偏好存储：保存主题、显示选项、音乐来源、播放模式、
+        连接状态及部分搜索和播放记录。
+      </li>
+      <li>
+        应用支持目录及缓存目录：保存歌词、音乐元数据、
+        播放队列、图片、动态封面、试听片段和服务同步记录。
+        较大的数据可能从偏好存储转存为文件。
+      </li>
+      <li>
+        应用文档目录：保存导入的音频、内嵌封面、
+        本地资料库索引、歌单和收藏信息。
+      </li>
+      <li>
+        Keychain：保存网易云登录凭据。
+        当前实现使用仅限本设备的 Keychain 可访问性设置，
+        未启用这些凭据的 Keychain 同步。
+      </li>
+      <li>
+        临时目录：保存分享导出和音频处理过程中的中间文件。
+      </li>
+    </ul>
+    <p>
+      当前版本未实现通过 CloudKit 或 iCloud 容器进行的应用自有数据同步。
+      设备备份、从文件提供方导入内容，以及 Apple Music、
+      照片或其他系统服务的云端功能，是不同的处理流程，
+      可能受您的系统设置及相应服务规则影响。
+      因此，“保存在设备上”不表示相关数据绝不会包含在系统备份中。
+    </p>
+
+    <h2>7. 数据保留和删除</h2>
+    <p>
+      不同数据采用不同的保留方式。
+      设置、导入文件和部分成功查询缓存没有统一的自动删除期限。
+      部分缓存设有刷新或复用期限，但缓存到期不等于立即从磁盘删除。
+      系统也可能根据存储管理需要清理缓存或临时文件。
+    </p>
+    <ul>
+      <li>您可在搜索界面逐项删除显示的搜索历史记录。</li>
+      <li>
+        从首页歌曲列表移除记录，不会同时清除该歌曲的全部歌词、
+        封面缓存或播放记录。
+      </li>
+      <li>从本地歌单移除歌曲，只改变歌单内容，不会删除已导入的音频文件。</li>
+      <li>隐藏歌词不会清除歌词缓存。</li>
+      <li>
+        退出网易云连接的清理范围及保留项目，见本政策第 4 节。
+        断开 Apple Music 也不属于全量数据删除操作。
+      </li>
+      <li>
+        分享或处理流程结束、取消或失败时，应用会在相应路径尝试清理临时文件；
+        异常退出等情况可能使部分文件暂时保留。
+      </li>
+    </ul>
+    <p>
+      当前版本未提供覆盖所有存储位置的一键清除功能。
+      您可以通过系统的应用存储管理功能管理 Meelo，
+      但不应将删除应用理解为同时删除 Keychain 凭据、
+      系统备份、第三方账号信息、Apple Music 歌单，
+      或已经保存和分享至其他位置的副本。
+      外部服务中的内容需要在相应服务中另行管理。
+    </p>
+
+    <h2>8. 分享与照片权限</h2>
+    <p>
+      当您生成或分享歌词图片、视频等内容时，
+      Meelo 会在设备上处理所选内容。
+      若您选择保存到照片，应用会在需要时请求相应系统权限；
+      若您选择通过其他应用分享，所选内容会交给您选择的应用或服务。
+    </p>
+    <p>
+      清理 Meelo 中的临时文件不会删除已经保存至照片、
+      文件或接收方服务中的副本。
+      分享后的内容受相应接收方的处理规则约束。
+    </p>
+
+    <h2>9. 分析与诊断</h2>
+    <p>
+      在分析与崩溃诊断方面，Meelo 仅使用 Apple 提供的相关能力，
+      不接入第三方分析或崩溃统计 SDK。
+      Apple 是否提供相关分析或诊断信息，取决于系统设置及 Apple 的规则。
+      这与前述用于歌词、封面、音乐和试听的第三方功能请求不同。
+    </p>
+    <p>
+      Meelo 还提供本地音乐服务与封面诊断信息，
+      可包含应用版本、系统版本、授权和订阅状态、
+      签名元数据、操作时间及错误代码。
+      您可以主动复制这些信息用于排查问题。
+      复制操作本身不会将诊断报告发送给开发者。
+    </p>
+
+    <h2>10. 第三方处理与政策更新</h2>
+    <p>
+      Apple 及本政策列明的第三方服务会按照各自的政策处理收到的信息。
+      Meelo 的本地删除操作不能删除这些服务已经持有的数据，
+      本政策也不替这些服务承诺统一的服务器日志保留期限。
+    </p>
+    <p>
+      我们可能根据功能或数据处理方式的变化更新本政策，
+      并在本页面调整最后更新日期。
+      涉及需要另行告知或授权的变化时，我们会按适用要求处理。
+    </p>
+
+    <h2>11. 联系我们</h2>
+    <p>
+      如您对本政策或 Meelo 的数据处理有疑问，
+      或希望提出隐私相关请求，请联系：
+      <a href="mailto:tzy790580031@gmail.com">tzy790580031@gmail.com</a>。
+      您发送邮件时，我们会收到您提供的邮箱地址和邮件内容，
+      并用于处理和回复您的请求。
+      请勿发送账号密码、登录 Cookie 或访问令牌。
+    </p>
+  </article></main><footer>© 2026 Meelo</footer></div><script>
+const labels={zh:{support:'技术支持',privacy:'隐私政策',language:'语言',appearance:'外观',auto:'语言：跟随系统',system:'主题：跟随系统',light:'浅色',dark:'深色',skip:'跳至正文',navigation:'页面导航'},en:{support:'Support',privacy:'Privacy Policy',language:'Language',appearance:'Appearance',auto:'Language: System',system:'Theme: System',light:'Light',dark:'Dark',skip:'Skip to content',navigation:'Site navigation'}};
+const langSelect=document.getElementById('language');const themeSelect=document.getElementById('theme');
+function render(){const lang=setLanguage();const t=labels[lang];document.querySelectorAll('[data-label]').forEach(el=>el.textContent=t[el.dataset.label]);langSelect.setAttribute('aria-label',t.language);themeSelect.setAttribute('aria-label',t.appearance);document.querySelector('nav').setAttribute('aria-label',t.navigation);langSelect.value=language;themeSelect.value=theme;document.title='Meelo — '+t[document.body.dataset.page];setTheme()}
+langSelect.addEventListener('change',()=>{language=langSelect.value;write('meelo-lang',language);render()});
+themeSelect.addEventListener('change',()=>{theme=themeSelect.value;write('meelo-theme',theme);render()});
+media.addEventListener('change',setTheme);window.addEventListener('languagechange',render);
+window.addEventListener('storage',event=>{if(event.key==='meelo-lang'||event.key==='meelo-theme'||event.key===null){const l=read('meelo-lang'),t=read('meelo-theme');language=['zh','en'].includes(l)?l:'auto';theme=['light','dark'].includes(t)?t:'auto';render()}});render();
+</script></body></html>
